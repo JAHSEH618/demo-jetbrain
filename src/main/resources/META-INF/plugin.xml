@@ -15,4 +15,11 @@
     <applicationListeners>
         <listener class="com.github.jahseh618.demojetbrain.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
+    <actions>
+        <action id="PopAction_ID" class="com.github.jahseh618.demojetbrain.actions.PopAction" text="markdown_index"
+                description="add serial number to your .md titles">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="meta P"/>
+        </action>
+    </actions>
 </idea-plugin>
