@@ -29,7 +29,8 @@ public final class MarkdownIndexServices {
         return lineContent.substring(0, markIndex + markCount)
                 + " "
                 + prefix
-                + lineContent.substring(markIndex+markCount).trim();
+                + " "
+                + lineContent.substring(markIndex + markCount).trim();
     }
 
     private Integer addIndex(String[] lines, Integer lastMarkCount, String prefix, Integer cursor) {
@@ -58,7 +59,7 @@ public final class MarkdownIndexServices {
              int markCount = countNumberMark(lines[cursor]);
 
              if (markCount == numberMarkCount && markCount > lastMarkCount) {
-                 String curPrefix = prefix + seq + '.';
+                 String curPrefix = prefix + seq + ".";
                  lines[cursor] = addPrefix(lines[cursor], curPrefix, cursor + 1);
                  seq++;
 
