@@ -5,6 +5,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 
@@ -21,7 +22,12 @@ public class PopAction extends AnAction {
         if (!"md".equalsIgnoreCase(extension)) {
             String title = String.format("文件类型错误");
             String message = "<br>该功能仅对markdown文件有效，请在正确的文件下执行此操作！<br>";
-
+            Messages.showMessageDialog(project, message, title, Messages.getInformationIcon());
+            return;
         }
+
+        String[] lines = document.getText().split("\n");
+
+
     }
 }
